@@ -35,7 +35,7 @@ export default function BAWSAQPage() {
     <div className="min-h-screen flex items-center justify-center bg-green-100">
       <div className="w-[1024px] bg-green-500 rounded-lg shadow-xl overflow-hidden">
         <header className="bg-lime-700 text-center p-4">
-          <h1 className="text-4xl font-bold">BALLSACK</h1>
+          <h1 className="text-4xl font-bold">BALLSAC</h1>
           <p className="text-sm">Dealing in Life&apos;s Ups and Downs</p>
         </header>
 
