@@ -1,20 +1,27 @@
 "use client";
 import React, { useEffect, useState } from "react";
 
+type Coin = {
+  id: string;
+  symbol: string;
+  name: string;
+  current_price: number;
+  market_cap: number;
+  price_change_percentage_24h: number;
+};
+
 export default function BAWSAQPage() {
   const [activeTab, setActiveTab] = useState<"markets" | "tokenomics" | "disclaimer">("markets");
-  const [topCoins, setTopCoins] = useState<any[]>([]);
+  const [topCoins, setTopCoins] = useState<Coin[]>([]);
 
-  // Fetch top 10 coins
   useEffect(() => {
     const fetchTopCoins = async () => {
       try {
         const response = await fetch(
           "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false"
         );
-        const data = await response.json();
-        console.log("Top Coins:", data);
-        setTopCoins(data); // Save the top 10 coins to state
+        const data: Coin[] = await response.json();
+        setTopCoins(data);
       } catch (error) {
         console.error("Error fetching coins data:", error);
       }
@@ -27,9 +34,8 @@ export default function BAWSAQPage() {
     <div className="min-h-screen flex items-center justify-center bg-green-100">
       <div className="w-[1024px] bg-green-500 rounded-lg shadow-xl overflow-hidden">
         <header className="bg-lime-700 text-center p-4">
-          <h1 className="text-4xl font-bold">BALLSAC</h1>
-          <p className="text-sm font-bold">CA:</p>
-          <p className="text-sm">Dealing in Life's Ups and Downs</p>
+          <h1 className="text-4xl font-bold">BALLSACK</h1>
+          <p className="text-sm">Dealing in Life&apos;s Ups and Downs</p>
         </header>
 
         <nav className="bg-green-800 flex justify-between items-center p-2 px-4">
@@ -112,24 +118,8 @@ export default function BAWSAQPage() {
           )}
 
           {activeTab === "tokenomics" && (
-            <div className="bg-green-700 p-4 rounded-lg shadow-lg flex">
-              <div className="flex-1 flex items-center justify-center">
-                <div className="w-56 h-56 bg-green-500 rounded-full flex items-center justify-center">
-                  <p className="text-center text-sm font-semibold text-green-900">
-                    Token Distribution
-                  </p>
-                </div>
-              </div>
-              <div className="flex-1 p-4">
-                <h2 className="text-2xl font-bold mb-4">Tokenomics</h2>
-                <ul className="list-disc pl-5 space-y-2">
-                  <li>50% - Community</li>
-                  <li>20% - Development</li>
-                  <li>15% - Marketing</li>
-                  <li>10% - Liquidity</li>
-                  <li>5% - Reserve</li>
-                </ul>
-              </div>
+            <div className="bg-green-700 p-4 rounded-lg shadow-lg">
+              <p>Tokenomics Content Here</p>
             </div>
           )}
 
@@ -137,7 +127,7 @@ export default function BAWSAQPage() {
             <div className="bg-green-700 p-4 rounded-lg shadow-lg">
               <h2 className="text-2xl font-bold mb-4">Disclaimer</h2>
               <p className="text-sm leading-relaxed">
-                The information provided on this platform is for educational purposes only. Investing in cryptocurrencies carries risks.
+                The information provided on this platform is for educational purposes only. Please don&apos;t invest more than you can afford to lose.
               </p>
             </div>
           )}
