@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 
+// Define the Coin type
 type Coin = {
   id: string;
   symbol: string;
@@ -69,6 +70,7 @@ export default function BAWSAQPage() {
         </nav>
 
         <main className="p-4 text-white">
+          {/* Markets Tab */}
           {activeTab === "markets" && (
             <div className="bg-stone-800 p-4 rounded-lg shadow-lg">
               <table className="table-auto w-full text-left border-collapse">
@@ -117,17 +119,37 @@ export default function BAWSAQPage() {
             </div>
           )}
 
+          {/* Tokenomics Tab */}
           {activeTab === "tokenomics" && (
-            <div className="bg-green-700 p-4 rounded-lg shadow-lg">
-              <p>Tokenomics Content Here</p>
+            <div className="bg-green-700 p-4 rounded-lg shadow-lg flex">
+              <div className="flex-1 flex items-center justify-center">
+                <div className="w-56 h-56 bg-green-500 rounded-full flex items-center justify-center">
+                  <p className="text-center text-sm font-semibold text-green-900">
+                    Token Distribution
+                  </p>
+                </div>
+              </div>
+              <div className="flex-1 p-4">
+                <h2 className="text-2xl font-bold mb-4">Tokenomics</h2>
+                <ul className="list-disc pl-5 space-y-2">
+                  <li>50% - Community Allocation</li>
+                  <li>20% - Development Fund</li>
+                  <li>15% - Marketing & Partnerships</li>
+                  <li>10% - Liquidity Pool</li>
+                  <li>5% - Reserves</li>
+                </ul>
+              </div>
             </div>
           )}
 
+          {/* Disclaimer Tab */}
           {activeTab === "disclaimer" && (
             <div className="bg-green-700 p-4 rounded-lg shadow-lg">
               <h2 className="text-2xl font-bold mb-4">Disclaimer</h2>
               <p className="text-sm leading-relaxed">
-                The information provided on this platform is for educational purposes only. Please don&apos;t invest more than you can afford to lose.
+                The information provided on this platform is for educational purposes only.
+                Cryptocurrency investments are speculative and involve significant risk. Always consult
+                with a financial advisor before making investment decisions.
               </p>
             </div>
           )}
