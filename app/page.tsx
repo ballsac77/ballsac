@@ -35,17 +35,25 @@ export default function BAWSAQPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-green-100">
       <div className="w-[1024px] bg-green-500 rounded-lg shadow-xl overflow-hidden">
-        <header className="bg-lime-700 relative text-center p-4 flex justify-center items-center">
-          <Image
-            src="/ballsac.png"
-            alt="Ballsac Logo"
-            width={140} // Adjust size
-            height={120} // Adjust size
-            className="absolute left-4 top-4" // Position the logo
-          />
-          <p className="text-sm font-bold">CA: </p>
-          <p className="text-sm">Dealing in Life&apos;s Ups and Downs</p>
-        </header>
+        <header className="bg-lime-700 text-center p-4 flex justify-between items-center">
+  {/* Logo on the left */}
+  <Image
+    src="/ballsac.png"
+    alt="Ballsac Logo"
+    width={140} // Adjust size as needed
+    height={120} // Adjust size as needed
+    className="ml-4"
+  />
+
+  {/* Header content in the center */}
+  <div className="text-center flex-1">
+    <p className="text-sm font-bold">CA: </p>
+    <p className="text-sm">Dealing in Life&apos;s Ups and Downs</p>
+  </div>
+
+  {/* Empty space or placeholder for balance */}
+  <div className="w-12"></div>
+</header>
 
         <nav className="bg-green-800 flex justify-between items-center p-2 px-4">
           <div className="flex space-x-6">
