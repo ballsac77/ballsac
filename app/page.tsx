@@ -47,7 +47,7 @@ export default function BAWSAQPage() {
 
   {/* Header content in the center */}
   <div className="text-center flex-1">
-    <p className="text-sm font-bold">CA: </p>
+    <p className="text-sm font-bold">CA: FBcTn68gCVnXX54x9pDaDUs3ABi2x4dwfm9WXNCpump </p>
     <p className="text-sm">Dealing in Life&apos;s Ups and Downs</p>
   </div>
 
