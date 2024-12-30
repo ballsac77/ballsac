@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import Image from "next/image"; // Import Image component from Next.js
 
 // Define the Coin type
 type Coin = {
@@ -34,8 +35,15 @@ export default function BAWSAQPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-green-100">
       <div className="w-[1024px] bg-green-500 rounded-lg shadow-xl overflow-hidden">
-        <header className="bg-lime-700 text-center p-4">
+        <header className="bg-lime-700 relative text-center p-4 flex justify-center items-center">
           <h1 className="text-4xl font-bold">BALLSAC</h1>
+          <Image
+            src="/ballsac.png"
+            alt="Ballsac Logo"
+            width={50} // Adjust size
+            height={50} // Adjust size
+            className="absolute left-4 top-4" // Position the logo
+          />
           <p className="text-sm font-bold">CA: </p>
           <p className="text-sm">Dealing in Life&apos;s Ups and Downs</p>
         </header>
