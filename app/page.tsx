@@ -36,12 +36,11 @@ export default function BAWSAQPage() {
     <div className="min-h-screen flex items-center justify-center bg-green-100">
       <div className="w-[1024px] bg-green-500 rounded-lg shadow-xl overflow-hidden">
         <header className="bg-lime-700 relative text-center p-4 flex justify-center items-center">
-          <h1 className="text-4xl font-bold">BALLSAC</h1>
           <Image
             src="/ballsac.png"
             alt="Ballsac Logo"
-            width={50} // Adjust size
-            height={50} // Adjust size
+            width={140} // Adjust size
+            height={120} // Adjust size
             className="absolute left-4 top-4" // Position the logo
           />
           <p className="text-sm font-bold">CA: </p>
